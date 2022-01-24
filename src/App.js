@@ -78,6 +78,10 @@ export default class App extends React.Component {
     };
   }
 
+  restartGame(i) {
+    console.log("hello");
+  }
+
   handleClick(i) {
     const history = this.state.history;
     const current = history[history.length - 1];
@@ -118,6 +122,11 @@ export default class App extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
+          {winner ? (
+            <button onClick={(i) => this.restartGame(i)}>Restart Game</button>
+          ) : (
+            ""
+          )}
           <ol>{/* TODO */}</ol>
         </div>
       </div>
